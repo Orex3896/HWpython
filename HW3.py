@@ -56,16 +56,30 @@
 # одно слово, которое содержит либо только английские, либо только 
 # русские буквы.
 
-d = {
-    "'A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R','А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'":1, 
-    "'D', 'G','Д', 'К', 'Л', 'М', 'П', 'У'":2,
-    "'B', 'C', 'M', 'P','Б', 'Г', 'Ё', 'Ь', 'Я'":3,
-    "'F', 'H', 'V', 'W', 'Y','Й','Ы'":4,
-    "'K','Ч'":5,
-    "'J', 'X','Ш', 'Э', 'Ю'":8,
-    "'Q', 'Z', 'Ф', 'Щ', 'Ъ'":10
-    }
-n = input("Введите слово ___ ").strip().upper()
-sum = 0
+eng = 'qwertyuiopasdfghjklzxcvbnm'
 
-print(sum([i[1] for i in d.items()]))
+rus = 'йцукенгшщзхъфывапролджэячсмитьбюё'
+
+D_Eng = {1:'AEIOULNSTR', 2:'DG', 3:'BCMP',
+                4:'FHVWY', 5:"K" , 8:'JX', 10:'QZ'}
+D_Rus = {1:'АВЕИНОРСТ', 2:'ДКЛМПУ', 3:'БГЁЬЯ',
+                4:'ЙЫ', 5:'ЖЗХЦЧ', 8:'ШЭЮ', 10:'ФШЪ'}
+
+word = input('Введите слово на русском или английском языке: ')
+
+if word[0].lower() in eng:
+    summa = 0
+    for letter in word:
+        for key, value in D_Eng.items():
+            if letter.upper() in value:
+                summa += key
+    print(f'стоимость введенного английского слова = {summa}')
+else:
+    if word[0].lower() in rus:
+        summa = 0
+        for letter in word:
+
+            for key, value in D_Rus.items():
+                if letter.upper() in value:
+                    summa += key
+    print(f'стоимость введенного русского слова = {summa}')
