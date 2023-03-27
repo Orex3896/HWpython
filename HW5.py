@@ -19,7 +19,7 @@
 def sum(a,b):
     if a == 0:
         return b
-    return(a+b)
+    return (a+1 , b-1)
 b = int(input("b = "))
 a = int(input("a = "))
 print(sum(a,b))
