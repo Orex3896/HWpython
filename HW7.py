@@ -14,21 +14,29 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #     **Вывод:** Парам пам-пам 
 
-string_glasnye= 'а','е','ё','ю','я','и','о','ы','э'
+# string_glasnye= 'а','е','ё','ю','я','и','о','ы','э'
 
-string_slova='Пара-ра-рам к к к ф ф ф  рам-пам-папам па-ра-па-да'.lower()
-#string_slova = 'к к к к к ф ф ф ф'
-#string_slova =input().lower()
-count=0
-print(string_slova)
-print(string_slova.split())
+# string_slova='Пара-ра-рам к к к ф ф ф  рам-пам-папам па-ра-па-да'.lower()
+# #string_slova = 'к к к к к ф ф ф ф'
+# #string_slova =input().lower()
+# count=0
+# print(string_slova)
+# print(string_slova.split())
 
-summa = [sum(i in string_glasnye for i in lin)
- for lin in string_slova]
+# summa = [sum(i in string_glasnye for i in lin)
+#  for lin in string_slova]
  
-if len(set(summa)) == 1 :
-    res = "Парам пам-пам"  
-else: res = "Пам парам"
+# if len(set(summa)) == 1 :
+#     res = "Парам пам-пам"  
+# else: res = "Пам парам"
  
-print(res)
+# print(res)
+
+
+
+a = 6
+
+for i in range(1, a+1):
+     print(*range(i, i*a+1, i), sep='\t')
+
 
